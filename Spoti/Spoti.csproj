@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CBF44CF1-2921-436D-A2AD-28FC2CF16D5D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Spoti</RootNamespace>
+    <AssemblyName>Spoti</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\Album.cs" />
+    <Compile Include="Entity\Artist.cs" />
+    <Compile Include="Entity\Link.cs" />
+    <Compile Include="Interface\IModule.cs" />
+    <Compile Include="Helper\Functions.cs" />
+    <Compile Include="Library\libspotify_album.cs" />
+    <Compile Include="Library\libspotify_albumbrowsing.cs" />
+    <Compile Include="Library\libspotify_artist.cs" />
+    <Compile Include="Library\libspotify_artistbrowsing.cs" />
+    <Compile Include="Library\libspotify_errors.cs" />
+    <Compile Include="Library\libspotify_imagehandling.cs" />
+    <Compile Include="Library\libspotify_inbox.cs" />
+    <Compile Include="Library\libspotify_links.cs" />
+    <Compile Include="Library\libspotify_playlist.cs" />
+    <Compile Include="Library\libspotify_search.cs" />
+    <Compile Include="Library\libspotify_sessions.cs" />
+    <Compile Include="Library\libspotify_toplisthandling.cs" />
+    <Compile Include="Library\libspotify_track.cs" />
+    <Compile Include="Library\libspotify_user.cs" />
+    <Compile Include="Interface\Log.cs" />
+    <Compile Include="DownloadSession.cs" />
+    <Compile Include="SessionBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entity\Track.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
